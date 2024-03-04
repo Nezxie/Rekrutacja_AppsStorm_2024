@@ -6,7 +6,7 @@ export default function SelectTypeForm({fetchProduce}) {
   const onSubmit = (data) => fetchProduce(data.food)
 
   return (
-    <form className='flex flex-col w-1/2 items-start justify-between h-32 my-4'  onSubmit={handleSubmit(onSubmit)}>
+    <form className='flex flex-col w-1/2 items-start gap-5 my-4'  onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="food-type">Jedzenie</label>
      <select id="food-type" {...register("food")} required={true} className="py-2.5 pl-4 pr-6 rounded-xl text-gray-700 bg-white border border-gray-700">
         <option value="none">Wybierz...</option>

@@ -1,8 +1,8 @@
 import React from 'react'
 import ProductItem from './ProductItem';
-function Content({listOfContent}) {
+function Content({listOfContent,selectHandle,deSelectHandle}) {
     const listItems = listOfContent.map(product => 
-    <ProductItem key={product.id} isChecked={false} productName={product.name} quantity={product.qty} />
+    <ProductItem key={product.id} productId={product.id} isChecked={false} productName={product.name} quantity={product.qty} selectHandle={selectHandle} deSelectHandle={deSelectHandle}/>
     );
   return (
     <div>
