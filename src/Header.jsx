@@ -1,12 +1,13 @@
 import React from 'react'
+import Checkbox from './Checkbox.jsx'
 
-function Header({checkAll,produceType,toggleListVisibility}) {
+function Header({produceType,toggleListVisibility,listVisible}) {
   return (
-    <>
-      <input type='checkbox'/>
+    <div className='flex justify-between text-xl'>
+      <Checkbox checked={false}/>
       <h2>{produceType}</h2>
-      <button>&darr;</button>
-  </>
+      <button onClick={toggleListVisibility}>{listVisible?'↑':'↓'}</button>
+  </div>
   )
 }
 

@@ -5,9 +5,9 @@ function Content({listOfContent}) {
     <ProductItem key={product.id} isChecked={false} productName={product.name} quantity={product.qty} />
     );
   return (
-    <>
+    <div>
       {listItems}
-    </>
+    </div>
   )
 }
 
