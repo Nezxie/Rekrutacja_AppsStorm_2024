@@ -1,9 +1,17 @@
 import { useForm } from "react-hook-form"
 import React from 'react'
 
-export default function SetPriceForm({nameList}) {
+export default function SetPriceForm({nameList,handleError, addPrice}) {
   const { register, handleSubmit } = useForm()
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = function(data){
+    if(!/^\d+(?:[,.]\d{1,2})?$/.test(data.price)){
+      handleError(true,"Proszę wpisać w pole jedynie cyfry. Części dziesiętne należy oddzielić kropką lub przecinkiem.")
+    }
+    else{
+      handleError(false);
+      addPrice(data.price);
+    }
+  }
 
   return (
     <form className='flex flex-col w-1/2 items-start gap-5 my-4'  onSubmit={handleSubmit(onSubmit)}>

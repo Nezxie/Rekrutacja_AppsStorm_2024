@@ -7,7 +7,7 @@ import SetPriceForm from './SetPriceForm.jsx'
 
 
 
-function ListContainer({listOfContent,produceType}) {
+function ListContainer({listOfContent,produceType,handleError,cookieAddPrices}) {
   const [listVisible, setListVisible] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [nameList, setNameList] = useState("");
@@ -29,7 +29,7 @@ function ListContainer({listOfContent,produceType}) {
     deSelectAll();
   },[produceType])
 
-  
+
     function formatHeader(formOutput){
       if(formOutput == 'fruits')
         return 'Owoce';
@@ -53,8 +53,8 @@ function ListContainer({listOfContent,produceType}) {
   }
 
   function selectAll(){
-    changeProductSelection([listOfContent.map(product => 
-      product.id)]);
+    changeProductSelection(listOfContent.map(product => 
+      product.id));
 
   }
 
@@ -63,6 +63,10 @@ function ListContainer({listOfContent,produceType}) {
   }
   function changeProductSelection(value){
     setSelectedProducts(value)
+  }
+
+  function addPrice(price){
+    cookieAddPrices(price,selectedProducts);
   }
 
   return (
@@ -75,7 +79,7 @@ function ListContainer({listOfContent,produceType}) {
       : ''
     }
     {produceType&& selectedProducts.length > 0?  
-    <SetPriceForm nameList={nameList}/>:''
+    <SetPriceForm nameList={nameList} handleError={handleError} addPrice={addPrice}/>:''
     }
     </>
   )
