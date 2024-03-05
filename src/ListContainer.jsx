@@ -7,7 +7,7 @@ import SetPriceForm from './SetPriceForm.jsx'
 
 
 
-function ListContainer({listOfContent,produceType,handleError,cookieAddPrices}) {
+function ListContainer({listOfContent,produceType,handleError,addPrices}) {
   const [isListVisible, setisListVisible] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [headerCheckbox, setHeaderCheckbox] = useState(false);
@@ -28,7 +28,6 @@ function ListContainer({listOfContent,produceType,handleError,cookieAddPrices}) 
   useEffect(() => {
     deSelectAll();
   },[produceType])
-
 
     function formatHeader(formOutput){
       if(formOutput == 'fruits')
@@ -85,7 +84,7 @@ function ListContainer({listOfContent,produceType,handleError,cookieAddPrices}) 
   }
   
   function addPrice(price){
-    cookieAddPrices(price,selectedProducts);
+    addPrices(price,selectedProducts);
   }
   
   function toggleListVisibility(){

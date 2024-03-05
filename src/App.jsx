@@ -2,7 +2,7 @@ import SelectTypeForm from './SelectTypeForm.jsx'
 import ListContainer from './ListContainer.jsx'
 import ErrorMessage from './ErrorMessage.jsx'
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -34,24 +34,23 @@ function handleValidationError(isError,msg){
   setError();
 }
 
-///??? nie updatuje wgl bardzo losowo
-function cookieAddPrices(price,selectedProducts){
+function addPrices(price,selectedProducts){
   let currentObj = posts;
   for(let item of currentObj){
     if(selectedProducts.includes(item.id)){
       item.price = price;
     }
   }
-    if(posts != currentObj){
+    if(posts !== currentObj){
       setPosts(currentObj);
     }
-}
+  }
 
   return (
     <div className='flex flex-col my-0 mx-auto max-w-3xl text-l font-poppins'>
       {error?<ErrorMessage errorMsg={error} />:''}
       <SelectTypeForm fetchProduce={fetchProduceList} handleError={handleValidationError}/>
-      <ListContainer listOfContent={posts} produceType={productType} handleError={handleValidationError} cookieAddPrices={cookieAddPrices}/>
+      <ListContainer listOfContent={posts} produceType={productType} handleError={handleValidationError} addPrices={addPrices}/>
     </div>
   )
 }
