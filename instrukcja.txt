@@ -1,17 +1,17 @@
 1. Stwórz formularz:
-- powinien zawierać 1 select z: Warzywa, Owoce
-- powinien zawierać 1 button Wyślij
-- jak klikniesz Wyślij to powinno zwalidować czy jakaś wartość w select została wybrana, jeśli nie została to wyświetlić błąd
-- użyj do tego react-hook-form i yup. Opcjonalnie możesz użyć biblioteki komponentów lub użyć bootstrapa/tailwind do stylowania
+- powinien zawierać 1 select z: Warzywa, Owoce✔️
+- powinien zawierać 1 button Wyślij✔️
+- jak klikniesz Wyślij to powinno zwalidować czy jakaś wartość w select została wybrana, jeśli nie została to wyświetlić błąd✔️
+- użyj do tego react-hook-form✔️ i yup❌. Opcjonalnie możesz użyć biblioteki komponentów lub użyć bootstrapa/tailwind✔️ do stylowania
 (https://react-hook-form.com/get-started)
 (https://github.com/jquense/yup)
-2. Lista o nazwie <ListContainer />
+2. Lista o nazwie <ListContainer />✔️
 - powinna zawierać 2 komponenty
-1: <Header/> - powinien zawierać checkbox i strzałkę jak. klikniesz na checkbox to wszystkie elementy z listy (<Content />) powinny być zaznaczone, jak na strzałkę to lista rozwinie się
-2: <Content/> - powinien zawierać listę elementów, każdy ma checkbox. Jeśli checkbox zostanie zaznaczony to powinien pojawić się input gdzie można wpisać cenę. jeśli kliknie się dodaj cenę to cena pojawi się obok elementu
-3. odpal apkę przez https na localhost i za pomocą json-server lub innego wyślij request, który zwróci secure cookie wraz z listą wyborów do selecta
+1: <Header/> - powinien zawierać checkbox i strzałkę jak. klikniesz na checkbox to wszystkie elementy z listy (<Content />) powinny być zaznaczone✔️, jak na strzałkę to lista rozwinie się✔️
+2: <Content/> - powinien zawierać listę elementów, każdy ma checkbox. Jeśli checkbox zostanie zaznaczony to powinien pojawić się input gdzie można wpisać cenę.✔️ 
+jeśli kliknie się dodaj cenę to cena pojawi się obok elementu❌
+3. odpal apkę przez https na localhost i za pomocą json-server lub innego wyślij request✔️, który zwróci secure cookie❌ wraz z listą wyborów do selecta✔️
 
 
 2) wyswietlanie ceny jak juz jest dodana
-3)select all/none działający na pojedyncze checkboxy
 4) trzymanie danych w ciastku
