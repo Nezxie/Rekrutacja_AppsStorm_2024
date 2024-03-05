@@ -35,7 +35,7 @@ function handleValidationError(isError,msg){
 }
 
 function addPrices(price,selectedProducts){
-  let currentObj = posts;
+  let currentObj = posts.slice();
   for(let item of currentObj){
     if(selectedProducts.includes(item.id)){
       item.price = price;
