@@ -10,6 +10,10 @@ function App() {
   const [error, setError] = useState();
 
 function fetchProduceList(type){
+  if(type == 'none'){
+    setProductType(undefined);
+    return;
+  }
        fetch('http://localhost:8000/'+type)
           .then((res) => res.json())
           .then((data) => {

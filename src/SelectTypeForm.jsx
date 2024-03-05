@@ -7,10 +7,7 @@ export default function SelectTypeForm({fetchProduce,handleError}) {
     if(data.food == 'none'){
       handleError(true,'Proszę wybrać jedną z kategorii.');
     }
-    else{
-      handleError(false);
-      return fetchProduce(data.food)
-    }
+    return fetchProduce(data.food)
   }
 
   return (
