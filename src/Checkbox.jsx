@@ -1,16 +1,13 @@
 import React from 'react'
-import {useState} from 'react'; 
 
-export default function Checkbox({checkBoxChanged}) {
-  const [checked, setChecked] = useState(false); 
-  const handleChange = () => {     
-    setChecked(!checked);
-    checkBoxChanged(!checked);     
+export default function Checkbox({checkBoxChanged,checkedValue, id, changeAll = false}) {
+  const handleChange = () => { 
+    checkBoxChanged(!checkedValue,id, changeAll)
   }; 
 
   return (
     <label className="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="check">
-<input type="checkbox" onChange={handleChange}
+<input type="checkbox" onChange={handleChange} checked={!!checkedValue}
   className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900"
   id="check" />
 <span
