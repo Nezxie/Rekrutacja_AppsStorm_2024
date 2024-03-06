@@ -14,7 +14,7 @@ function fetchProduceList(type){
     setProductType(undefined);
     return;
   }
-       fetch('http://localhost:8000/'+type)
+       fetch('https://rekrutacjaapi-3t5t312yn-nezxies-projects.vercel.app/api/'+type)
           .then((res) => res.json())
           .then((data) => {
             setProductType(type);
